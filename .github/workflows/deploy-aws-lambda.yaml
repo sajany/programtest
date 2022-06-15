@@ -26,3 +26,4 @@ jobs:
           aws-region: us-east-1
       - name: Serverless Deploy
         run: npm run-script deploy
+        
