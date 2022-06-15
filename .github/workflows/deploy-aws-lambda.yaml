@@ -27,4 +27,7 @@ jobs:
           aws_region: us-east-1
           function_name: programtest
           zip_file: bundle.zip
+      - run: npm ci
+      - name: serverless deploy
+        uses: serverless/github-action@v3
         
