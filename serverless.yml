@@ -14,11 +14,11 @@ package:
 
 functions:
   theLambda:
-    name: newtest
-    handler: lambda_function.lambda_handler
-    description: newtest
-    timeout: 
-    memorySize: 
+    name: programtest
+    handler: lambda.handler
+    description: programtest
+    timeout: 5 # seconds
+    memorySize: 128 # mb
     package:
       patterns:
         - "!node_modules/**"
