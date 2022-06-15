@@ -13,10 +13,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and build
-        run: |
-          npm ci
-          npm run build --if-present
+      - name: Install Dependencies
+        run: npm install
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         env:
           CI: true
       - name: zip
@@ -31,4 +31,6 @@ jobs:
           aws_region: us-west-1
           function_name: programtest
           zip_file: bundle.zip
+      - name: Serverless Deploy
+        run: npm run-script deploy
         
