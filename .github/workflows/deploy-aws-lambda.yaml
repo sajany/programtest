@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
     steps:
       - uses: actions/checkout@main
       - name: Use Node.js ${{ matrix.node-version }}
@@ -27,12 +27,12 @@ jobs:
         with:
           args: zip -qq -r ./bundle.zip ./
       - name: default deploy
-        uses: appleboy/lambda-action@master
+        uses: appleboy/lambda-action@main
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-          function_name: my-function
+          function_name: programtest
           zip_file: bundle.zip
       - name: Serverless Deploy
         run: npm run-script deploy
