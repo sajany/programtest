@@ -11,15 +11,10 @@ plugins:
 
 package:
   individually: true
-
-functions:
-  theLambda:
-    name: programtest
-    handler: lambda.handler
-    description: programtest
-    timeout: 5 # seconds
-    memorySize: 128 # mb
-    package:
+  run: |
+    --function-name ${{ env.AWS_LAMBDA_FUNC_NAME }} \
+  env:
+  AWS_LAMBDA_FUNC_NAME: newtest
       patterns:
         - "!node_modules/**"
         - "!yarn.lock"
