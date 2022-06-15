@@ -1,13 +1,4 @@
-Timeout=1min
+# Deploy an AWS Lambda Function in Python using the Serverless Framework and GitHub Actions (CI/CD)
 
-Triggers
-APIGateway: update-detected-entity-handler
-
-EnvironmentVariables
-AUTH_HEADER
-BUCKET_NAME
-BUCKET_REGION
-NODE_V2_URL
-
-Layers
-arn:aws:lambda:us-east-1:113088814899:layer:Klayers-python37-requests:14
+### Full Video Tutorial
+* Check out the YouTube tutorial [here](https://youtu.be/KorJPUKvHKc)!
