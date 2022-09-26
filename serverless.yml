@@ -13,12 +13,12 @@ package:
   individually: true
 
 functions:
-  theLambda:
-    name: programtest
-    handler: lambda.handler
-    description: programtest
-    timeout: 5 # seconds
-    memorySize: 128 # mb
+  proxy:
+    handler: index.handler
+    events:
+     - httpApi:
+         path: /test
+         method: ANY
     package:
       patterns:
         - "!node_modules/**"
